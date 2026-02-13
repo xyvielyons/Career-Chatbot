@@ -42,7 +42,7 @@ export default function CareerChat() {
       if (result.error) {
         setMessages((prev) => [...prev, { role: "bot", text: result.error }]);
       } else {
-        setMessages((prev) => [...prev, { role: "bot", text: result.content }]);
+        setMessages((prev:any) => [...prev, { role: "bot", text: result.content }]);
       }
     });
   }
@@ -126,7 +126,7 @@ export default function CareerChat() {
         <CardFooter className="p-4 border-t bg-white">
           <div className="flex w-full gap-2">
             <Input
-              placeholder="Ask for interview tips or resume feedback..."
+              placeholder="Ask me any question........."
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && handleSend()}
